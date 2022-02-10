@@ -7,7 +7,7 @@ function ShowNotification(text)
 end
 
 RegisterCommand("toggledrift", function()
-    local playerPed = GetPlayerPed(-1)
+    local playerPed = PlayerPedId()
     local playerVehicle = GetVehiclePedIsIn(playerPed, false)
     if playerVehicle ~= 0 and IsVehicleOnAllWheels(playerVehicle) and GetPedInVehicleSeat(playerVehicle, -1) == playerPed then
         globalDriftState = not GetDriftTyresEnabled(playerVehicle)
